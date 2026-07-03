@@ -1,0 +1,17 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Radii & shadows" subtitle="Pill 50 · card 12 · glass 20 + soft elevation" -->
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;font-family:var(--font-sans);background:var(--white);padding:24px}
+.row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.box{width:96px;height:64px;background:var(--grey-04);border:1px solid var(--grey-08)}
+.lab{font-family:var(--font-mono);font-size:10px;color:var(--grey-40);margin-top:8px;text-align:center}
+.sh-card{box-shadow:var(--shadow-card);border:none}
+.sh-glass{box-shadow:var(--shadow-glass);border:none}
+.pill{width:120px;border-radius:50px}</style></head>
+<body><div class="row">
+<div><div class="box pill"></div><div class="lab">pill · 50</div></div>
+<div><div class="box" style="border-radius:12px"></div><div class="lab">card · 12</div></div>
+<div><div class="box" style="border-radius:20px"></div><div class="lab">glass · 20</div></div>
+<div><div class="box" style="border-radius:50%;width:64px"></div><div class="lab">circle</div></div>
+<div><div class="box sh-card" style="border-radius:12px"></div><div class="lab">shadow-card</div></div>
+<div><div class="box sh-glass" style="border-radius:20px"></div><div class="lab">shadow-glass</div></div>
+</div></body></html>

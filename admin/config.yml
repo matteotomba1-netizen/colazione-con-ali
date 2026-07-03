@@ -1,0 +1,96 @@
+# ============================================================================
+#  Configurazione del pannello riservato (Decap CMS)
+#  Dopo "REPO" metti il tuo: nome-utente-github/nome-repository
+# ============================================================================
+backend:
+  name: git-gateway
+  branch: main
+
+# I contenuti vengono salvati qui dentro
+media_folder: "assets/caricate"
+public_folder: "assets/caricate"
+
+locale: "it"
+
+collections:
+  - name: "contenuti"
+    label: "Contenuti del sito"
+    files:
+      - name: "dati"
+        label: "Ricette, corse e impostazioni"
+        file: "content/contenuti.json"
+        fields:
+
+          - label: "🔢 Numeri in alto"
+            name: "numeri"
+            widget: "list"
+            fields:
+              - { label: "Numero", name: "numero", widget: "string" }
+              - { label: "Descrizione", name: "testo", widget: "string" }
+
+          - label: "🍳 Ricette"
+            name: "ricette"
+            widget: "list"
+            label_singular: "ricetta"
+            summary: "{{fields.titolo}}"
+            fields:
+              - { label: "Titolo", name: "titolo", widget: "string" }
+              - { label: "Etichetta (es. Overnight · Proteica)", name: "etichetta", widget: "string" }
+              - { label: "Tempo (es. 12 min · ~420 kcal)", name: "tempo", widget: "string" }
+              - { label: "Etichettina", name: "badge", widget: "select", options: ["Ricetta", "Featured", "Forno"], default: "Ricetta" }
+              - { label: "Foto", name: "foto", widget: "image", required: false }
+              - { label: "🎬 Video Instagram (link del reel)", name: "video", widget: "string", required: false }
+              - { label: "Procedimento (un passaggio per riga)", name: "procedimento", widget: "text", required: false }
+
+          - label: "🏃‍♀️ Corse"
+            name: "corse"
+            widget: "list"
+            label_singular: "corsa"
+            summary: "{{fields.titolo}}"
+            fields:
+              - { label: "Titolo", name: "titolo", widget: "string" }
+              - { label: "Etichetta (es. Maratona · Milano)", name: "etichetta", widget: "string" }
+              - { label: "Distanza km (es. 42,195)", name: "km", widget: "string" }
+              - { label: "Info (data o passo)", name: "info", widget: "string" }
+              - { label: "Stato", name: "stato", widget: "select", options: ["Iscritta", "Completata", "In arrivo", "In valutazione"], default: "In arrivo" }
+
+          - label: "🛒 Prozis"
+            name: "prozis"
+            widget: "object"
+            fields:
+              - { label: "Codice sconto", name: "codice", widget: "string" }
+              - { label: "Link Prozis", name: "link", widget: "string" }
+
+          - label: "📱 Social"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string" }
+              - { label: "TikTok", name: "tiktok", widget: "string", default: "#" }
+              - { label: "Strava", name: "strava", widget: "string", default: "#" }
+
+          - label: "📸 La tua foto (card nella sezione dei numeri)"
+            name: "profilo"
+            widget: "object"
+            fields:
+              - { label: "Foto", name: "foto", widget: "image", required: false }
+              - { label: "Nome", name: "nome", widget: "string", default: "Alissa" }
+              - { label: "Handle Instagram", name: "handle", widget: "string", default: "@colazioneconali" }
+              - { label: "Bio breve", name: "bio", widget: "string", default: "amo allenarmi e fare colazione :)" }
+
+  - name: "idee"
+    label: "💡 Idee e richieste di modifica"
+    files:
+      - name: "note"
+        label: "Le tue note per chi cura il sito"
+        file: "content/idee.json"
+        fields:
+          - label: "Note"
+            name: "note"
+            widget: "list"
+            label_singular: "nota"
+            summary: "{{fields.titolo}}"
+            fields:
+              - { label: "Titolo breve", name: "titolo", widget: "string" }
+              - { label: "Descrivi cosa vorresti cambiare o aggiungere", name: "testo", widget: "text" }
+              - { label: "Foto di riferimento (facoltativa)", name: "foto", widget: "image", required: false }

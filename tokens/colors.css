@@ -1,0 +1,56 @@
+/* =========================================================
+   COLORS — sunrise warmth + chrome black/white
+   The feeling is dawn: warm backgrounds are the top priority.
+   ========================================================= */
+:root {
+  /* --- Sunrise palette (base) --- */
+  --sun:     #FFD46B;
+  --peach:   #FFB088;
+  --coral:   #FF7E8A;
+  --rose:    #FF4F8E;
+  --magenta: #E84393;
+  --lilac:   #C39BFF;
+  --sky:     #9BC9FF;
+  --cream:   #FFF3E2;
+  --berry:   #6E2A6F;
+  --mint:    #7EEDC9;
+  --amber:   #FFAA2C;
+
+  /* --- Chrome (base) --- */
+  --black:   #000000;
+  --white:   #FFFFFF;
+  --grey-04: #f7f7f7;
+  --grey-08: #ededed;
+  --grey-20: #c9c9c9;
+  --grey-40: #8a8a8a;
+  --grey-60: #5a5a5a;
+
+  /* --- Glass-morphism --- */
+  --glass-light:  rgba(255, 255, 255, 0.16);
+  --glass-border: rgba(255, 255, 255, 0.28);
+  --glass-strong: rgba(255, 255, 255, 0.65);
+
+  /* --- Semantic aliases --- */
+  --text-primary:   var(--black);
+  --text-secondary: var(--grey-60);
+  --text-muted:     var(--grey-40);
+  --text-on-dark:   var(--white);
+
+  --surface-page:   var(--white);
+  --surface-card:   var(--grey-04);
+  --surface-dark:   var(--black);
+  --surface-cream:  var(--cream);
+
+  --border-subtle:  var(--grey-08);
+  --border-strong:  var(--black);
+
+  --accent:         var(--rose);
+  --accent-warm:    var(--coral);
+  --accent-cool:    var(--lilac);
+
+  /* --- Signature gradients --- */
+  --grad-sunrise: linear-gradient(160deg, #FFF6E0 0%, #FFF0F5 40%, #F5EEFF 100%); /* @kind color */
+  --grad-rose:    linear-gradient(90deg, var(--rose), var(--magenta), var(--lilac)); /* @kind color */
+  --grad-warm:    linear-gradient(135deg, #FFD46B 0%, #FF7E8A 60%, #E84393 100%); /* @kind color */
+  --grad-cool:    linear-gradient(135deg, #C39BFF 0%, #9BC9FF 100%); /* @kind color */
+}

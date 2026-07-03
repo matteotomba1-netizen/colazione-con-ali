@@ -1,0 +1,238 @@
+{
+  "numeri": [
+    {
+      "numero": "6.392",
+      "testo": "follower Instagram"
+    },
+    {
+      "numero": "183",
+      "testo": "ricette & post"
+    },
+    {
+      "numero": "19",
+      "testo": "colazioni pubblicate"
+    },
+    {
+      "numero": "4",
+      "testo": "corse nel 2026"
+    }
+  ],
+  "ricette": [
+    {
+      "titolo": "Mugcake rovesciata alle mele",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DZ2uAVyus7v/",
+      "procedimento": "Mescola farina d'avena, cannella, lievito, purea di mela, liquido e dolcificante fino a ottenere un composto liscio.\nAggiungi i pezzettini di mela.\nCuoci in microonde a massima potenza per 2 minuti, aprendo lo sportello a metà cottura.\nIn alternativa: friggitrice a 150° per 15-20 min.\nUna volta intiepidita, rovesciala in un piattino e lascia riposare in frigo tutta la notte.\nMescola yogurt greco, ricotta e dolcificante per la copertura.\nDecora con la crema alla ricotta, pezzettini di mela e cannella."
+    },
+    {
+      "titolo": "Mugcake ricotta, limone e pistacchio",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DZzifmDIjRL/",
+      "procedimento": "Mescola farina, purea di mela e lievito, poi aggiungi la parte liquida e il dolcificante.\nMescola fino a ottenere un composto liscio senza grumi.\nCuoci in microonde a massima potenza per 2 minuti, aprendo qualche volta lo sportello.\nAlternative: friggitrice a 150-155° per 20 min, forno a 180° per 20 min, o bagnomaria per 20-30 min.\nMescola yogurt e ricotta con dolcificante per lo strato cremoso.\nDecora con marmellata ai frutti di bosco e crema di pistacchi."
+    },
+    {
+      "titolo": "Mugcake caffè e cioccolato",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DZfcDaKIg0S/",
+      "procedimento": "Mescola farina, cacao, lievito, purea di mela, latte e dolcificante fino a ottenere un composto liscio.\nCuoci in microonde a massima potenza per circa 2 minuti, facendo una pausa a metà.\nIn alternativa: friggitrice a 150-155° o forno a 180° per circa 20 min.\nUna volta intiepidita, aggiungi lo strato di yogurt al caffè.\nPrepara la salsina mescolando cacao, yogurt, dolcificante e caffè fino a formare una salsina liscia.\nDecora con la salsina al cacao e, se vuoi, sbriciolaci mezzo biscotto.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "Mugcake ricotta e mirtilli",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DZXe09lo4-d/",
+      "procedimento": "Mescola farina, purea di mela e lievito, poi aggiungi la parte liquida e il dolcificante.\nMescola fino a ottenere un composto liscio senza grumi.\nAggiungi qualche mirtillo.\nCuoci in microonde a massima potenza per 2 minuti, aprendo qualche volta lo sportello.\nMescola yogurt e ricotta con dolcificante per lo strato cremoso.\nDecora con marmellata ai mirtilli e mirtilli freschi.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "7 colazioni per 7 giorni",
+      "etichetta": "Compilazione · Colazione",
+      "tempo": "",
+      "badge": "Featured",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DZFb95WIFCN/",
+      "procedimento": "Weetabix al cioccolato e PB: sbriciolate 2 formelle, unite yogurt, cacao, PB in polvere e dolcificante; decorate con salsina al cacao e PB.\nTortino ricotta e mirtilli: unite farina, lievito, purea di mela e albumi; versate in uno stampo con ricotta e mirtilli; cuocete in friggitrice a 155° per 20-25 min.\nOvernight mugcake: vedi ricetta dedicata sul profilo.\nOvernight oats vaniglia e mirtilli: mescolate fiocchi di avena, proteine, yogurt e dolcificante; coprite con yogurt o ricotta, marmellata e mirtilli.\nOvernight oats PB e marmellata: stessa base; decorate con yogurt, PB, marmellata alle fragole e biscotto lotus sbriciolato.\nPancakes al tiramisù: vedi ricetta dedicata sul profilo.\nOvernight oats fondente: mescolate fiocchi di avena, cacao, dolcificante e latte; decorate con salsina al cacao, crema fondente e cocco in scaglie."
+    },
+    {
+      "titolo": "Pancakes al tiramisù",
+      "etichetta": "Pancakes · Colazione",
+      "tempo": "15-20 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DY97lV5IGFf/",
+      "procedimento": "Mescola farina d'avena, cacao, banana schiacciata, lievito, un goccio di caffè, albume e dolcificante.\nScalda una padella antiaderente leggermente oliata.\nVersa due cucchiai di impasto alla volta formando piccoli pancakes.\nGirali non appena si gonfiano bene.\nCoprili con pellicola se vuoi prepararli la sera prima.\nMescola yogurt greco, ricotta, caffè e dolcificante per la crema al caffè.\nAlterna strati di pancakes e crema.\nTermina con una spolverata di cacao amaro."
+    },
+    {
+      "titolo": "Weetabix fragole, ricotta e crema white",
+      "etichetta": "Weetabix · Overnight",
+      "tempo": "5 min preparazione",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DYwmtIPIN6k/",
+      "procedimento": "Schiaccia mezza banana con una forchetta.\nSbriciolate 2 formelle di weetabix e uniscile alla banana, allo yogurt greco, al dolcificante e alla cannella.\nMescola e aggiungi un goccio di acqua o latte fino alla consistenza desiderata.\nMescola ricotta, yogurt, dolcificante e un cucchiaino di marmellata alle fragole per lo strato intermedio.\nAggiungi altra marmellata alle fragole in superficie.\nDecora con la crema white e cocco rapè in scaglie.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "Weetabix a strati",
+      "etichetta": "Weetabix · Overnight",
+      "tempo": "5 min preparazione",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DYcrly_Ijue/",
+      "procedimento": "Sbriciolate 2 formelle di weetabix e uniscile al caffè, alla banana in purea, al dolcificante, al cacao e a un goccio di acqua o latte.\nMescola yogurt greco con burro di arachidi in polvere e dolcificante per la crema.\nAlterna due volte la parte con i weetabix alla crema.\nTermina con una gocciola sbriciolata sopra.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "Torta di mele monoporzione",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DYUNEURIvNB/",
+      "procedimento": "Mescola farina d'avena, lievito, purea di mela, latte e cannella fino a ottenere un composto liscio.\nAggiungi i pezzettini di mela.\nCuoci in microonde a massima potenza per 2 minuti, con una pausa a metà.\nPrepara lo strato di yogurt greco con cannella, burro di arachidi in polvere e dolcificante.\nAggiungi lo strato di yogurt sulla base intiepidita.\nDecora con burro di arachidi crunchy e pezzettini di mela passati in micro con la cannella.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "6 overnight mugcakes (dosi generali)",
+      "etichetta": "Mugcake · Compilazione",
+      "tempo": "2 min cottura",
+      "badge": "Featured",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DYPrrslIcmO/",
+      "procedimento": "Mescola 40g di farina d'avena, 35g di purea di mela o banana, mezzo cucchiaino di lievito, dolcificante e 80g di latte.\nCuoci in microonde a massima potenza per 2 minuti.\nIn alternativa: forno a 180° per 15-20 min o friggitrice a 150-155° per 20 min.\nAggiungi sopra uno strato di yogurt greco o mix ricotta e yogurt (100-120g).\nDecora con salsina al cacao, burro di frutta secca, marmellata o frutta fresca."
+    },
+    {
+      "titolo": "Weetabix banana, ciocco e arachidi",
+      "etichetta": "Weetabix · Overnight",
+      "tempo": "5 min preparazione",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DX1TAsCo2Kn/",
+      "procedimento": "Schiaccia mezza banana con una forchetta.\nSbriciolate 2 formelle di weetabix e uniscile alla banana, al cacao, al burro di arachidi in polvere, allo yogurt greco e al dolcificante.\nMescola e aggiungi un goccio di acqua o latte fino alla consistenza desiderata.\nPrepara la salsina al cacao mescolando cacao, yogurt, un goccio di caffè e dolcificante; aggiungi acqua a poco a poco fino a formare una salsina.\nAggiungi la salsina alla base.\nDecora con un cucchiaino di burro di arachidi e un biscotto lotus sbriciolato.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "Mugcake burro di arachidi e marmellata",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DXweLDTIzCH/",
+      "procedimento": "Mescola farina, lievito, purea di mela, latte e dolcificante fino a ottenere un composto liscio.\nCuoci in microonde a 700-800W per circa 2 minuti, aprendo lo sportello qualche volta.\nTienila un po' meno del solito se vuoi evitare che diventi gommosa.\nMescola yogurt greco con burro di arachidi, dolcificante e un pizzico di cannella.\nAggiungi lo strato di yogurt sulla base intiepidita.\nTermina con la tua marmellata preferita.\nLascia riposare in frigo tutta la notte."
+    },
+    {
+      "titolo": "Mugcake ricotta e cioccolato",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DXgpIppCCH9/",
+      "procedimento": "Mescola cacao, farina d'avena e lievito, poi aggiungi la purea di mela, il latte e il dolcificante.\nMescola fino a ottenere un composto liscio senza grumi.\nCuoci in microonde a 700-800W per circa 2 minuti, aprendo qualche volta lo sportello.\nMescola yogurt greco, ricotta e gocce di cioccolato fondente con dolcificante.\nAggiungi lo strato di crema sulla base intiepidita.\nTermina con una spolverata di cacao.\nLascia riposare in frigo tutta la notte."
+    },
+    {
+      "titolo": "Pancakes facili e soffici",
+      "etichetta": "Pancakes · Colazione",
+      "tempo": "15-20 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DXT4nK7CKwF/",
+      "procedimento": "Mescola farina d'avena, cannella, lievito, uovo, purea di mela, un goccio di latte e dolcificante.\nScalda una padella antiaderente leggermente oliata.\nVersa due cucchiai di impasto alla volta formando piccoli pancakes.\nGirali non appena si gonfiano bene.\nCoprili con pellicola se vuoi prepararli la sera prima.\nServili con yogurt greco dolcificato e frutta fresca."
+    },
+    {
+      "titolo": "Mugcake cioccolato, ricotta e fragole",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DXMTYeTiA1X/",
+      "procedimento": "Mescola cacao, farina d'avena e lievito, poi aggiungi la purea di mela, il latte e il dolcificante.\nMescola fino a ottenere un composto liscio.\nCuoci in microonde a massima potenza per 2 minuti, aprendo qualche volta lo sportello.\nMescola yogurt greco e ricotta con dolcificante per lo strato cremoso.\nPrepara la salsina al cacao unendo cacao, yogurt, dolcificante e acqua o latte fino a formare una salsina.\nAggiungi prima la crema poi la salsina sulla base intiepidita.\nLascia riposare in frigo tutta la notte e aggiungi le fragole fresche al mattino."
+    },
+    {
+      "titolo": "6 idee overnight oats",
+      "etichetta": "Oats · Compilazione",
+      "tempo": "5 min preparazione",
+      "badge": "Featured",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DWtBuf6CA0_/",
+      "procedimento": "Base classica: mescola 35g di fiocchi piccoli di avena con 120-130g di yogurt greco, dolcificante, 10g di proteine in polvere (facoltativo) e un goccio di latte.\nVersione 1: decora con salsina al cacao e crema di nocciole.\nVersione 2: usa base alla zucca con cacao; decora con salsina al cacao, PB e biscotto sbriciolato.\nVersione 3: aggiungi cannella alla base; completa con ricotta, marmellata e biscotto (effetto cheesecake).\nVersione 4: base classica con toppings freschi: banana e burro di arachidi.\nVersione 5: aggiungi gocce di cioccolato alla base; decora con salsina al cacao e gocciola sbriciolata.\nVersione 6: base al cacao; decora con yogurt alla nocciola, crema di nocciole e fragole.\nLascia riposare in frigo tutta la notte."
+    },
+    {
+      "titolo": "Mugcake zucca e cannella",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DWle938iI94/",
+      "procedimento": "Schiaccia la zucca cotta fino a ridurla in purea.\nUnisci farina d'avena, cannella e lievito, poi aggiungi il latte e la purea di zucca.\nMescola fino a ottenere un composto liscio.\nCuoci in microonde a massima potenza per 2 minuti, aprendo qualche volta lo sportello.\nMescola yogurt greco con dolcificante e cannella per lo strato cremoso.\nAggiungi lo strato di yogurt sulla base intiepidita.\nDecora con burro di arachidi, cannella e un biscotto secco sbriciolato.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "Mugcake ciocco, ricotta e frutti di bosco",
+      "etichetta": "Mugcake · Overnight",
+      "tempo": "2 min cottura",
+      "badge": "Ricetta",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DWYuMewuxMm/",
+      "procedimento": "Mescola cacao, farina d'avena e lievito, poi aggiungi la purea di mela, il latte e il dolcificante.\nMescola fino a ottenere un composto liscio senza grumi.\nCuoci in microonde a massima potenza per 2 minuti, aprendo qualche volta lo sportello.\nMescola yogurt greco e ricotta con dolcificante per lo strato cremoso.\nAggiungi lo strato di crema sulla base intiepidita.\nTermina con marmellata ai frutti di bosco o frutti rossi freschi e mezzo biscotto al cioccolato sbriciolato.\nLascia riposare in frigo."
+    },
+    {
+      "titolo": "6 overnight mugcakes (video presentazione)",
+      "etichetta": "Mugcake · Compilazione",
+      "tempo": "",
+      "badge": "Featured",
+      "foto": "",
+      "video": "https://www.instagram.com/colazioneconali/reel/DWMPyPqiPjP/",
+      "procedimento": ""
+    }
+  ],
+  "corse": [
+    {
+      "titolo": "Milano Marathon",
+      "etichetta": "Maratona · Milano",
+      "km": "42,195",
+      "info": "15 · 06 · 26",
+      "stato": "Iscritta"
+    },
+    {
+      "titolo": "StraMilano 10K",
+      "etichetta": "10K · Milano",
+      "km": "6,60",
+      "info": "5′01″/km",
+      "stato": "Completata"
+    },
+    {
+      "titolo": "Bologna Run — Due Torri",
+      "etichetta": "10K · Bologna",
+      "km": "10,0",
+      "info": "22 · 09 · 26",
+      "stato": "In arrivo"
+    },
+    {
+      "titolo": "Appennino Trail 25K",
+      "etichetta": "Trail · Appennino",
+      "km": "25,0",
+      "info": "04 · 11 · 26",
+      "stato": "In valutazione"
+    }
+  ],
+  "prozis": {
+    "codice": "ALI03",
+    "link": "https://www.prozis.com/it/it/?ot=AFFIT2402&utm_source=prz_affiliate&utm_medium=referral&utm_content=link_in_bio&utm_campaign=al_ba_pr_sa"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/colazioneconali",
+    "tiktok": "#",
+    "strava": "#"
+  },
+  "profilo": {
+    "foto": "",
+    "nome": "Alissa",
+    "handle": "@colazioneconali",
+    "bio": "amo allenarmi e fare colazione :)"
+  }
+}
