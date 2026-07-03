@@ -13,7 +13,7 @@ const SEAM_REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-mot
 const SEAM_TINTS = {
   warm: ['#FFB46B', '#FF7E8A', '#C9A0FF'],
   rose: ['#FF9FC4', '#E84393', '#A77BFF'],
-  cool: ['#FFC074', '#9B8CFF', '#6FA8FF']
+  cool: ['#FFC074', '#9B8CFF', '#6FA8FF'],
 };
 
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
@@ -22,7 +22,7 @@ const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 /* RNG deterministico: stesso seed → stessa forma */
 function mulberry32(a) {
   return function () {
-    a |= 0;a = a + 0x6D2B79F5 | 0;
+    a |= 0; a = a + 0x6D2B79F5 | 0;
     let t = Math.imul(a ^ a >>> 15, 1 | a);
     t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
     return ((t ^ t >>> 14) >>> 0) / 4294967296;
@@ -34,9 +34,9 @@ function smoothPath(pts) {
   if (pts.length < 2) return '';
   let d = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
   for (let i = 0; i < pts.length - 1; i++) {
-    const p0 = pts[i - 1] || pts[i],p1 = pts[i],p2 = pts[i + 1],p3 = pts[i + 2] || p2;
-    const c1x = p1[0] + (p2[0] - p0[0]) / 6,c1y = p1[1] + (p2[1] - p0[1]) / 6;
-    const c2x = p2[0] - (p3[0] - p1[0]) / 6,c2y = p2[1] - (p3[1] - p1[1]) / 6;
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+    const c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
     d += ` C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
   }
   return d;
@@ -44,18 +44,18 @@ function smoothPath(pts) {
 
 /* genera un percorso GPS-like: cammino casuale che attraversa la banda */
 function makeRoute(seed, W, H) {
-  const rng = mulberry32(seed >>> 0 || 1);
-  const N = 7 + Math.floor(rng() * 4); // 7–10 waypoint
-  const dir = rng() < 0.5 ? 1 : -1; // sx→dx oppure dx→sx (partenza opposta)
-  const mx = W * 0.07,top = H * 0.18,bot = H * 0.84;
-  let y = top + rng() * (bot - top); // quota di partenza casuale
+  const rng = mulberry32((seed >>> 0) || 1);
+  const N = 7 + Math.floor(rng() * 4);          // 7–10 waypoint
+  const dir = rng() < 0.5 ? 1 : -1;             // sx→dx oppure dx→sx (partenza opposta)
+  const mx = W * 0.07, top = H * 0.18, bot = H * 0.84;
+  let y = top + rng() * (bot - top);            // quota di partenza casuale
   const pts = [];
   for (let i = 0; i <= N; i++) {
     const t = i / N;
     const base = mx + (W - 2 * mx) * t;
-    let x = dir > 0 ? base : W - base;
+    let x = dir > 0 ? base : (W - base);
     x += (rng() - 0.5) * (W * 0.05);
-    y += (rng() - 0.5) * (H * 0.42); // serpentina verticale
+    y += (rng() - 0.5) * (H * 0.42);            // serpentina verticale
     y = clamp(y, top, bot);
     pts.push([x, y]);
   }
@@ -69,9 +69,26 @@ function Seam({ from, to, tint = 'warm', height = 176, seed = 1 }) {
   const dot = React.useRef(null);
   const halo = React.useRef(null);
   const uid = (React.useId ? React.useId() : 'seam' + seed).replace(/[:]/g, '');
-  const W = 1200,H = height;
+  const H = height;
+  /* la viewBox segue la larghezza REALE della fascia (misurata), invece di uno
+     1200px fisso stirato in orizzontale — così il tracciato non si deforma /
+     assottiglia sugli schermi stretti (telefono). */
+  const [W, setW] = React.useState(1200);
+  React.useLayoutEffect(() => {
+    const el = band.current;
+    if (!el) return;
+    const measure = () => {
+      const w = el.clientWidth;
+      if (w && Math.abs(w - W) > 4) setW(w);
+    };
+    measure();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    if (ro) ro.observe(el);
+    else window.addEventListener('resize', measure);
+    return () => { if (ro) ro.disconnect(); else window.removeEventListener('resize', measure); };
+  }, [W]);
 
-  const route = React.useMemo(() => makeRoute(seed, W, H), [seed, H]);
+  const route = React.useMemo(() => makeRoute(seed, W, H), [seed, W, H]);
 
   React.useEffect(() => {
     const p0 = trail.current;
@@ -95,11 +112,11 @@ function Seam({ from, to, tint = 'warm', height = 176, seed = 1 }) {
       }
     };
 
-    if (SEAM_REDUCE) {apply(1);return;}
+    if (SEAM_REDUCE) { apply(1); return; }
     apply(0);
 
     const update = () => {
-      const el = band.current;if (!el) return;
+      const el = band.current; if (!el) return;
       const r = el.getBoundingClientRect();
       const vh = window.innerHeight || 800;
       const c = r.top + r.height / 2;
@@ -110,12 +127,12 @@ function Seam({ from, to, tint = 'warm', height = 176, seed = 1 }) {
     const onScroll = () => update();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
-    return () => {window.removeEventListener('scroll', onScroll);window.removeEventListener('resize', onScroll);};
+    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
   }, [route]);
 
   return (
     <div ref={band} aria-hidden="true" style={{ position: 'relative', height: H, overflow: 'hidden', background: `linear-gradient(180deg, ${from} 0%, ${to} 100%)` }}>
-      <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" width="100%" height="100%" style={{ position: 'absolute', inset: 0, display: 'block', strokeWidth: "0px" }}>
+      <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" width="100%" height="100%" style={{ position: 'absolute', inset: 0, display: 'block' }}>
         <defs>
           <linearGradient id={`g${uid}`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stopColor={cols[0]} />
@@ -137,8 +154,8 @@ function Seam({ from, to, tint = 'warm', height = 176, seed = 1 }) {
         <circle ref={halo} r="13" fill={cols[1]} filter={`url(#b${uid})`} style={{ opacity: 0 }} />
         <circle ref={dot} r="5.4" fill="#fff" stroke={cols[1]} strokeWidth="2.4" style={{ opacity: 0 }} />
       </svg>
-    </div>);
-
+    </div>
+  );
 }
 
 window.Seam = Seam;
