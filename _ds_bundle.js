@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"ColazioneConAliDesignSystem_665c4d","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Modal","sourcePath":"components/core/Modal.jsx"},{"name":"Pill","sourcePath":"components/core/Pill.jsx"},{"name":"RecipeCard","sourcePath":"components/core/RecipeCard.jsx"},{"name":"Tabs","sourcePath":"components/core/Tabs.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"f18eefdcb35e","components/core/Button.jsx":"549dececdfc8","components/core/Modal.jsx":"f52e8a59c06b","components/core/Pill.jsx":"8f75a303dd0d","components/core/RecipeCard.jsx":"7cf296cefd26","components/core/Tabs.jsx":"20518a946a5b","seams.jsx":"362ee08eaf51","sections-bottom.jsx":"d835b60ab9e1","ui_kits/landing/app.jsx":"4cdb73c48ae8","ui_kits/landing/arcade-bottom.jsx":"7d83eb72a735","ui_kits/landing/arcade-top.jsx":"fec050d624af","ui_kits/landing/carica-contenuti.js":"7cdbc062006e","ui_kits/landing/contenuti.js":"90a768fb32bb","ui_kits/landing/parallax.js":"28108c85be07","ui_kits/landing/seams.jsx":"acfc7941ebbb","ui_kits/landing/sections-bottom.jsx":"4b04ad6055fe","ui_kits/landing/sections-mid.jsx":"b9b8472a3b58","ui_kits/landing/sections-top.jsx":"b3f43de14bce"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"ColazioneConAliDesignSystem_665c4d","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Modal","sourcePath":"components/core/Modal.jsx"},{"name":"Pill","sourcePath":"components/core/Pill.jsx"},{"name":"RecipeCard","sourcePath":"components/core/RecipeCard.jsx"},{"name":"Tabs","sourcePath":"components/core/Tabs.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"f18eefdcb35e","components/core/Button.jsx":"549dececdfc8","components/core/Modal.jsx":"f52e8a59c06b","components/core/Pill.jsx":"8f75a303dd0d","components/core/RecipeCard.jsx":"b8434d8733d9","components/core/Tabs.jsx":"20518a946a5b","seams.jsx":"362ee08eaf51","sections-bottom.jsx":"d835b60ab9e1","ui_kits/landing/app.jsx":"4cdb73c48ae8","ui_kits/landing/arcade-bottom.jsx":"7d83eb72a735","ui_kits/landing/arcade-top.jsx":"fec050d624af","ui_kits/landing/carica-contenuti.js":"7cdbc062006e","ui_kits/landing/contenuti.js":"90a768fb32bb","ui_kits/landing/parallax.js":"28108c85be07","ui_kits/landing/seams.jsx":"908a565e46c7","ui_kits/landing/sections-bottom.jsx":"759ce60c7003","ui_kits/landing/sections-mid.jsx":"c80de7bf206c","ui_kits/landing/sections-top.jsx":"7ac662fb8778"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -340,16 +340,28 @@ function RecipeCard({
     style: {
       width: '100%',
       height: '100%',
-      display: 'grid',
-      placeItems: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      padding: '46px 18px 16px',
+      boxSizing: 'border-box',
       background: GRADIENTS[gradient] || GRADIENTS.warm,
       color: '#fff',
       fontFamily: "'JetBrains Mono', monospace",
-      fontSize: 12,
+      fontSize: 'clamp(10px, 3.4vw, 13px)',
       letterSpacing: '0.6px',
-      textTransform: 'uppercase'
+      textTransform: 'uppercase',
+      lineHeight: 1.4
     }
-  }, fillText || title)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: '-webkit-box',
+      WebkitLineClamp: 4,
+      WebkitBoxOrient: 'vertical',
+      overflow: 'hidden'
+    }
+  }, fillText || title))), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '18px 20px 20px'
     }
@@ -3203,9 +3215,26 @@ function Seam({
   const dot = React.useRef(null);
   const halo = React.useRef(null);
   const uid = (React.useId ? React.useId() : 'seam' + seed).replace(/[:]/g, '');
-  const W = 1200,
-    H = height;
-  const route = React.useMemo(() => makeRoute(seed, W, H), [seed, H]);
+  const H = height;
+  /* la viewBox segue la larghezza REALE della fascia (misurata), invece di uno
+     1200px fisso stirato in orizzontale — così il tracciato non si deforma /
+     assottiglia sugli schermi stretti (telefono). */
+  const [W, setW] = React.useState(1200);
+  React.useLayoutEffect(() => {
+    const el = band.current;
+    if (!el) return;
+    const measure = () => {
+      const w = el.clientWidth;
+      if (w && Math.abs(w - W) > 4) setW(w);
+    };
+    measure();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    if (ro) ro.observe(el);else window.addEventListener('resize', measure);
+    return () => {
+      if (ro) ro.disconnect();else window.removeEventListener('resize', measure);
+    };
+  }, [W]);
+  const route = React.useMemo(() => makeRoute(seed, W, H), [seed, W, H]);
   React.useEffect(() => {
     const p0 = trail.current;
     if (!p0) return;
@@ -3362,6 +3391,7 @@ function Partner() {
     Button: BtnB
   } = window.ColazioneConAliDesignSystem_665c4d || {};
   return /*#__PURE__*/React.createElement("section", {
+    id: "prozis",
     style: {
       padding: '110px 32px',
       background: 'var(--cream)',
@@ -3764,7 +3794,8 @@ function Footer() {
       display: 'grid',
       gridTemplateColumns: '1.6fr 1fr 1fr 1fr',
       gap: 40
-    }
+    },
+    className: "footer-grid"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
@@ -4626,11 +4657,15 @@ function RunCard({
       position: 'absolute',
       bottom: 14,
       left: 14,
+      right: 14,
       color: '#fff',
-      fontSize: 30,
+      fontSize: 'clamp(20px, 7vw, 30px)',
       fontVariationSettings: "'wght' 500",
       letterSpacing: '-0.6px',
-      textShadow: '0 2px 12px rgba(0,0,0,0.25)'
+      textShadow: '0 2px 12px rgba(0,0,0,0.25)',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'
     }
   }, run.km, " km")), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -4829,17 +4864,22 @@ function Arrow({
 }
 
 /* ---------- NAV ---------- */
+const NAV_ITEMS = [['Ricette', '#ricette'], ['Le Corse', '#corse'], ['Chi sono', '#about'], ['Collabora', '#collab']];
 function Nav() {
   const {
     Button
   } = window.ColazioneConAliDesignSystem_665c4d || {};
   const [scrolled, setScrolled] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, {
       passive: true
     });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  React.useEffect(() => {
+    setOpen(false);
   }, []);
   return /*#__PURE__*/React.createElement("header", {
     style: {
@@ -4852,10 +4892,10 @@ function Nav() {
       display: 'flex',
       alignItems: 'center',
       padding: '0 32px',
-      borderBottom: `1px solid ${scrolled ? 'var(--grey-08)' : 'transparent'}`,
-      background: scrolled ? 'rgba(255,255,255,0.82)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+      borderBottom: `1px solid ${scrolled || open ? 'var(--grey-08)' : 'transparent'}`,
+      background: scrolled || open ? 'rgba(255,255,255,0.92)' : 'transparent',
+      backdropFilter: scrolled || open ? 'blur(20px)' : 'none',
+      WebkitBackdropFilter: scrolled || open ? 'blur(20px)' : 'none',
       transition: 'background 400ms ease, backdrop-filter 400ms ease, border-color 400ms ease'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -4877,7 +4917,8 @@ function Nav() {
       textDecoration: 'none',
       fontSize: 19,
       fontVariationSettings: "'wght' 520",
-      letterSpacing: '-0.4px'
+      letterSpacing: '-0.4px',
+      flexShrink: 0
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -4888,15 +4929,19 @@ function Nav() {
       color: '#fff',
       display: 'grid',
       placeItems: 'center',
-      fontSize: 13
+      fontSize: 13,
+      flexShrink: 0
     }
-  }, "\u2726"), "Colazione con Ali"), /*#__PURE__*/React.createElement("nav", {
+  }, "\u2726"), /*#__PURE__*/React.createElement("span", {
+    className: "nav-wordmark"
+  }, "Colazione con Ali")), /*#__PURE__*/React.createElement("nav", {
+    className: "nav-desktop",
     style: {
       display: 'flex',
       gap: 30,
       alignItems: 'center'
     }
-  }, [['Ricette', '#ricette'], ['Le Corse', '#corse'], ['Chi sono', '#about'], ['Collabora', '#collab']].map(([t, h]) => /*#__PURE__*/React.createElement("a", {
+  }, NAV_ITEMS.map(([t, h]) => /*#__PURE__*/React.createElement("a", {
     key: t,
     href: h,
     className: "nav-link",
@@ -4919,7 +4964,90 @@ function Nav() {
     size: "sm"
   }, /*#__PURE__*/React.createElement(IgGlyph, {
     s: 15
-  }), "Seguimi")))));
+  }), "Seguimi"))), /*#__PURE__*/React.createElement("button", {
+    className: "nav-burger",
+    "aria-label": open ? 'Chiudi menu' : 'Apri menu',
+    onClick: () => setOpen(o => !o),
+    style: {
+      display: 'none',
+      cursor: 'pointer',
+      background: 'transparent',
+      border: 'none',
+      width: 36,
+      height: 36,
+      position: 'relative',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'absolute',
+      left: 7,
+      right: 7,
+      top: 13,
+      height: 1.5,
+      background: '#000',
+      transition: 'transform 250ms ease, opacity 200ms ease',
+      transform: open ? 'translateY(4px) rotate(45deg)' : 'none'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'absolute',
+      left: 7,
+      right: 7,
+      top: 20,
+      height: 1.5,
+      background: '#000',
+      transition: 'transform 250ms ease, opacity 200ms ease',
+      opacity: open ? 0 : 1
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'absolute',
+      left: 7,
+      right: 7,
+      top: 27,
+      height: 1.5,
+      background: '#000',
+      transition: 'transform 250ms ease, opacity 200ms ease',
+      transform: open ? 'translateY(-4px) rotate(-45deg)' : 'none'
+    }
+  }))), open && /*#__PURE__*/React.createElement("div", {
+    className: "nav-mobile-panel",
+    style: {
+      background: 'rgba(255,255,255,0.98)',
+      borderTop: '1px solid var(--grey-08)',
+      padding: '10px 24px 22px',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, NAV_ITEMS.map(([t, h]) => /*#__PURE__*/React.createElement("a", {
+    key: t,
+    href: h,
+    onClick: () => setOpen(false),
+    style: {
+      padding: '14px 6px',
+      fontSize: 17,
+      color: 'var(--text-primary)',
+      textDecoration: 'none',
+      fontVariationSettings: "'wght' 420",
+      letterSpacing: '-0.16px',
+      borderBottom: '1px solid var(--grey-08)'
+    }
+  }, t)), /*#__PURE__*/React.createElement("a", {
+    href: IG_URL,
+    target: "_blank",
+    rel: "noopener",
+    onClick: () => setOpen(false),
+    style: {
+      textDecoration: 'none',
+      marginTop: 18
+    }
+  }, /*#__PURE__*/React.createElement(Button, {
+    arrow: true,
+    size: "sm"
+  }, /*#__PURE__*/React.createElement(IgGlyph, {
+    s: 15
+  }), "Seguimi"))));
 }
 
 /* ---------- HERO ---------- */
